@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تعليقات الأعضاء - Dr Process</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Tajawal', sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+      background: #161b22;
+      color: #58a6ff;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>💬 تعليقات الأعضاء</h1>
+  </header>
+
+  <div class="container">
+    <p>شارك رأيك في قناة <strong>Dr Process</strong> والمحتوى التعليمي!</p>
+
+    <!-- Giscus Comments -->
+    <script src="https://giscus.app/client.js"
+        data-repo="USERNAME/REPO"
+        data-repo-id="YOUR_REPO_ID"
+        data-category="General"
+        data-category-id="YOUR_CATEGORY_ID"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark"
+        data-lang="ar"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </div>
+</body>
+</html>
