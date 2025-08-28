@@ -1,283 +1,258 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ملف هاكر محترف | بروفايل</title>
-  <meta name="description" content="بروفايل احترافي لمتخصص أمن سيبراني/هاكر أخلاقي. تصميم أنيق، داكن، مع لمسات تقنية." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>دليل قناة Dr Process - الأمن السيبراني والهكر الأخلاقي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    :root{
-      --bg: #0b0f14;
-      --bg-2:#0f1620;
-      --card:#121a24;
-      --text:#e6edf3;
-      --muted:#9fb0c3;
-      --primary:#00e5a8; /* نيون أخضر */
-      --accent:#7aa2f7;  /* أزرق بارد */
-      --danger:#ff3f6e;  /* وردي قوي */
-      --glow: 0 0 30px rgba(0,229,168,.25), 0 0 60px rgba(0,229,168,.08);
-      --radius: 18px;
-      --shadow: 0 20px 40px rgba(0,0,0,.35);
+    body {
+      margin: 0;
+      font-family: 'Tajawal', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      display: flex;
+      scroll-behavior: smooth;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: "Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background: radial-gradient(1200px 600px at 80% -10%, rgba(0,229,168,.08), transparent),
-                  radial-gradient(900px 500px at -10% 0%, rgba(122,162,247,.07), transparent),
-                  linear-gradient(180deg, var(--bg), var(--bg-2));
-      overflow-x:hidden;
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: #161b22;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 20px;
+      overflow-y: auto;
+      border-left: 2px solid #30363d;
     }
-    /* مِصْفوفة نقاط متحركة خفيفة */
-    .grid-layer{
-      position:fixed; inset:0; pointer-events:none; opacity:.15; mix-blend:screen;
-      background-image: linear-gradient(transparent 31px, rgba(255,255,255,.06) 32px),
-                        linear-gradient(90deg, transparent 31px, rgba(255,255,255,.06) 32px);
-      background-size:32px 32px;
-      animation: pan 20s linear infinite;
+    .sidebar h2 {
+      color: #58a6ff;
+      margin-bottom: 20px;
+      font-size: 22px;
+      text-align: center;
     }
-    @keyframes pan { 0%{background-position:0 0, 0 0} 100%{background-position:0 32px, 32px 0} }
-
-    header{
-      position:sticky; top:0; z-index:10; backdrop-filter: blur(10px);
-      background:linear-gradient(180deg, rgba(11,15,20,.75), rgba(11,15,20,.35));
-      border-bottom:1px solid rgba(255,255,255,.06);
+    .sidebar a {
+      display: block;
+      padding: 10px 15px;
+      margin: 8px 0;
+      color: #c9d1d9;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
     }
-    .container{width:min(1200px, 92%); margin-inline:auto}
-    .nav{
-      display:flex; align-items:center; justify-content:space-between; padding:16px 0;
+    .sidebar a:hover {
+      background: #238636;
+      color: #fff;
     }
-    .brand{display:flex; gap:12px; align-items:center; font-weight:800; letter-spacing:.5px}
-    .logo{
-      width:40px; height:40px; border-radius:12px; display:grid; place-items:center;
-      background: radial-gradient(circle at 70% 30%, var(--primary), transparent 45%),
-                 radial-gradient(circle at 30% 70%, var(--accent), transparent 45%),
-                 #0a1118;
-      box-shadow: var(--glow);
-      position:relative; overflow:hidden;
+    .sidebar i {
+      margin-left: 8px;
     }
-    .logo::after{content:""; position:absolute; inset:0; background: conic-gradient(from 0deg, transparent 0 320deg, rgba(255,255,255,.2) 350deg 360deg); filter:blur(10px);}
-    nav ul{display:flex; gap:20px; list-style:none; margin:0; padding:0}
-    nav a{
-      color:var(--muted); text-decoration:none; font-weight:600; padding:8px 12px; border-radius:12px;
-      transition:.25s ease; font-size:14px;
+    /* Main Content */
+    .content {
+      margin-right: 280px;
+      padding: 30px;
+      max-width: 1000px;
     }
-    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
-
-    /* HERO */
-    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:32px; align-items:center; padding:64px 0 24px}
-    .kicker{color:var(--primary); font-weight:800; letter-spacing:1px; font-size:13px}
-    .title{font-size:48px; line-height:1.1; margin:10px 0 12px; font-weight:800}
-    .subtitle{color:var(--muted); font-size:18px;}
-
-    .cta{margin-top:28px; display:flex; gap:14px; flex-wrap:wrap}
-    .btn{
-      display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:14px; border:1px solid rgba(255,255,255,.08);
-      text-decoration:none; color:var(--text); font-weight:700; transition:.25s ease; box-shadow: var(--shadow);
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 40px;
+      background: #161b22;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
-    .btn.primary{background:linear-gradient(135deg, rgba(0,229,168,.18), rgba(122,162,247,.18)); border-color:rgba(255,255,255,.12)}
-    .btn.primary:hover{transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,229,168,.25)}
-    .btn.ghost:hover{background:rgba(255,255,255,.05)}
-
-    /* شاشة طرفية */
-    .terminal{
-      background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); overflow:hidden; box-shadow: var(--shadow);
+    .hero h1 {
+      font-size: 28px;
+      color: #58a6ff;
     }
-    .term-head{display:flex; align-items:center; gap:8px; padding:10px 12px; background:linear-gradient(180deg, #0d141c,#0b1118); border-bottom:1px solid rgba(255,255,255,.06)}
-    .dot{width:10px; height:10px; border-radius:50%}
-    .dot.red{background:#ff5f56}.dot.yellow{background:#ffbd2e}.dot.green{background:#27c93f}
-    .term-body{font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; padding:18px; font-size:14px; color:#d7e3ef}
-    .prompt{color:var(--primary)}
-    .cmd{color:#e6edf3}
-    .out{color:#9fb0c3}
-    .blink{animation:blink 1s steps(2,end) infinite}
-    @keyframes blink{50%{opacity:0}}
-
-    /* بطاقات */
-    .section{padding:60px 0}
-    .grid{display:grid; gap:18px; grid-template-columns:repeat(3,1fr)}
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-      border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:20px; transition:.25s ease; position:relative
+    .hero p {
+      font-size: 16px;
+      margin: 10px 0;
     }
-    .card:hover{transform: translateY(-6px); box-shadow: var(--glow)}
-    .card h3{margin:0 0 8px; font-size:18px}
-    .card p{margin:0; color:var(--muted); line-height:1.7}
-    .tag{display:inline-block; font-family:"JetBrains Mono"; font-size:12px; letter-spacing:.3px; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.12); color:var(--muted)}
-
-    /* سطور متحركة (تأثير كتابة) */
-    .typing{display:inline-block; border-inline-end:2px solid var(--primary); white-space:nowrap; overflow:hidden; animation: type 4s steps(40,end) 1, caret 1s step-end infinite}
-    @keyframes type { from{width:0} to{width:100%} }
-    @keyframes caret{ 50%{border-color:transparent} }
-
-    /* شارات */
-    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px}
-    .badge{font-family:"JetBrains Mono"; font-size:12px; padding:6px 10px; border-radius:10px; border:1px dashed rgba(255,255,255,.18); color:var(--muted)}
-
-    /* تذييل */
-    footer{border-top:1px solid rgba(255,255,255,.06); padding:30px 0; color:var(--muted); font-size:14px}
-    .social{display:flex; gap:12px}
-    .social a{display:inline-flex; align-items:center; gap:8px; text-decoration:none; color:var(--muted); padding:8px 10px; border-radius:12px; border:1px solid rgba(255,255,255,.06)}
-    .social a:hover{color:var(--text); border-color:rgba(255,255,255,.14)}
-
-    /* استجابة */
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr; padding:32px 0}
-      .title{font-size:36px}
-      .grid{grid-template-columns:1fr}
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #238636;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #2ea043; }
+    /* Sections */
+    section {
+      margin-bottom: 60px;
+      padding: 25px;
+      background: #161b22;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    section h2 {
+      color: #f78166;
+      border-bottom: 2px solid #30363d;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin: 10px 0;
+      padding: 10px;
+      border-bottom: 1px solid #30363d;
+      transition: 0.3s;
+    }
+    ul li:hover { background: #21262d; }
+    ul li a {
+      color: #c9d1d9;
+      text-decoration: none;
+    }
+    ul li a:hover { color: #58a6ff; }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-left: none;
+        border-bottom: 2px solid #30363d;
+      }
+      .content {
+        margin-right: 0;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="grid-layer" aria-hidden="true"></div>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <div style="font-size:14px; color:var(--muted); line-height:1">بروفايل</div>
-          <div style="font-size:18px; font-weight:800; letter-spacing:.5px">هاكر محترف</div>
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#about">نبذة</a></li>
-          <li><a href="#skills">المهارات</a></li>
-          <li><a href="#work">الأعمال</a></li>
-          <li><a class="tag" href="#contact">تواصل</a></li>
-        </ul>
-      </nav>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2><i class="fa-solid fa-shield-halved"></i> Dr Process</h2>
+    <a href="#intro"><i class="fa-solid fa-house"></i> المقدمة</a>
+    <a href="#tips"><i class="fa-solid fa-lightbulb"></i> نصائح ومفاهيم</a>
+    <a href="#general"><i class="fa-solid fa-book"></i> مواضيع عامة</a>
+    <a href="#awareness"><i class="fa-solid fa-triangle-exclamation"></i> التوعية السيبرانية</a>
+    <a href="#web"><i class="fa-solid fa-globe"></i> اختبار فحص الويب</a>
+    <a href="#wifi"><i class="fa-solid fa-wifi"></i> اختبار الواي فاي</a>
+    <a href="#server"><i class="fa-solid fa-server"></i> اختبار السيرفرات</a>
+    <a href="#kali"><i class="fa-brands fa-linux"></i> اتقان كالي لينكس</a>
+    <a href="#network"><i class="fa-solid fa-network-wired"></i> أمن الشبكات</a>
+    <a href="#ctf"><i class="fa-solid fa-flag"></i> تحديات CTF</a>
+    <a href="#tools"><i class="fa-solid fa-screwdriver-wrench"></i> الأدوات والبرامج</a>
+    <a href="#reports"><i class="fa-solid fa-file-lines"></i> تقارير وتحليلات</a>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <!-- Hero -->
+    <div class="hero" id="intro">
+      <h1>📘 دليل قناة Dr Process</h1>
+      <p>تاريخ النشر: 30 مايو 2025 | آخر تحديث: 10 مايو 2025</p>
+      <p>وجهتكم الأكاديمية للاحتراف في الأمن السيبراني والهكر الأخلاقي</p>
+      <a class="btn" href="https://www.youtube.com/watch?v=fR5wvh2Ch0k" target="_blank">اشترك الآن</a>
     </div>
-  </header>
 
-  <main class="container">
-    <!-- HERO -->
-    <section class="hero" id="about">
-      <div>
-        <div class="kicker">أمن سيبراني • هكر أخلاقي • اختبار اختراق</div>
-        <h1 class="title">
-          <span class="typing">أُصمِّم وأؤمِّن الأنظمة، وأكشف الثغرات قبل المهاجمين.</span>
-        </h1>
-        <p class="subtitle">متخصص في اختبار الاختراق، الصيد الرقمي، وتحليل البرمجيات الخبيثة. أساعد المؤسسات على رفع جاهزيتها، وبناء دفاعات قوية، وتحويل المخاطر إلى دروس مستفادة.</p>
-        <div class="badges">
-          <span class="badge">CEH</span>
-          <span class="badge">CHFI</span>
-          <span class="badge">ECSA</span>
-          <span class="badge">OSINT</span>
-          <span class="badge">DFIR</span>
-        </div>
-        <div class="cta">
-          <a class="btn primary" href="#work">مشاهدة الأعمال</a>
-          <a class="btn ghost" href="#contact">طلب تعاون</a>
-        </div>
-      </div>
-      <div class="terminal" aria-label="محاكاة شاشة طرفية">
-        <div class="term-head">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-          <span style="margin-inline-start:10px; color:var(--muted); font-family:JetBrains Mono">~/security/lab</span>
-        </div>
-        <div class="term-body">
-          <div><span class="prompt">┌─(root㉿lab)-[~]</span></div>
-          <div><span class="prompt">└──╼ </span><span class="cmd">nmap -sC -sV -Pn target.local</span></div>
-          <div class="out">PORT   STATE SERVICE VERSION</div>
-          <div class="out">22/tcp open  ssh     OpenSSH 9.6p1</div>
-          <div class="out">80/tcp open  http    nginx 1.25</div>
-          <div class="out">443/tcp open https   nginx 1.25 (TLS 1.3)</div>
-          <br />
-          <div><span class="prompt">┌─(root㉿lab)-[~]</span></div>
-          <div><span class="prompt">└──╼ </span><span class="cmd">python3 -c "print('Exploit → Success')"</span></div>
-          <div class="out">Exploit → Success</div>
-          <div class="out">Report saved: /reports/pentest-2025.pdf</div>
-          <div class="out">_ <span class="blink">█</span></div>
-        </div>
-      </div>
+    <!-- مثال على قسم -->
+    <section id="tips">
+      <h2>🛡️ نصائح ومفاهيم عامة</h2>
+      <ul>
+        <li>من هو الهكر؟ ومن هو الهكر الأخلاقي؟</li>
+        <li>كيف أتعلم الهكر الأخلاقي ومن أين أبدأ؟</li>
+        <li>للمبتدئين: ارسم طريق نجاحك بيدك</li>
+        <li>القواعد العشرة لتطوير مهاراتك</li>
+        <li>هل اللغة الإنجليزية ضرورية في الأمن السيبراني؟</li>
+      </ul>
     </section>
 
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-      <h2 style="margin:0 0 16px; font-size:28px">مجالات التخصص</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>اختبار اختراق تطبيقات الويب</h3>
-          <p>تحليل منطق الأعمال، OWASP Top 10، الحقن، تجاوز التحكم بالوصول، وتصعيد الامتيازات.</p>
-        </article>
-        <article class="card">
-          <h3>اختبار اختراق الشبكات</h3>
-          <p>نتحكم بدورة كاملة: الاستطلاع، الاستغلال، الحركة الجانبية، ورفع الامتيازات.</p>
-        </article>
-        <article class="card">
-          <h3>الاستقصاء المفتوح (OSINT)</h3>
-          <p>بناء بروفايلات دقيقة، ربط الأدلة، وتحليل البصمة الرقمية لاكتشاف الثغرات المعلوماتية.</p>
-        </article>
-        <article class="card">
-          <h3>الاستجابة للحوادث (DFIR)</h3>
-          <p>عزل، احتواء، تحليل جنائي، وإصدار تقارير تنفيذية وخطوات تصحيحية قابلة للتنفيذ.</p>
-        </article>
-        <article class="card">
-          <h3>تأمين البنية السحابية</h3>
-          <p>تقييم إعدادات IAM، الضوابط الشبكية، وسياسات الامتثال في البيئات السحابية.</p>
-        </article>
-        <article class="card">
-          <h3>التوعية وبناء القدرات</h3>
-          <p>ورش عمل، مسارات تدريب، ومحاكاة هجمات اجتماعية لرفع نضج الأمن السيبراني.</p>
-        </article>
-      </div>
+    <section id="general">
+      <h2>🛡️ مواضيع عامة</h2>
+      <ul>
+        <li>تحميل وتثبيت كالي لينكس على VirtualBox</li>
+        <li>شرح مفهوم الروابط URL</li>
+        <li>أفضل مختبرات التدريب</li>
+      </ul>
     </section>
 
-    <!-- WORK -->
-    <section class="section" id="work">
-      <h2 style="margin:0 0 16px; font-size:28px">نماذج من الأعمال</h2>
-      <div class="grid">
-        <article class="card">
-          <span class="tag">Web • Pentest</span>
-          <h3>تقييم أمني لتطبيق مالي</h3>
-          <p>كشف ثغرات حرجة في التحكم بالوصول ومعالجة الجلسات، مع توصيات إغلاق خلال أسبوع.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Cloud</span>
-          <h3>تقوية بيئة سحابية</h3>
-          <p>تطبيق CIS Benchmarks، تشديد مفاتيح الوصول، وتفعيل مراقبة آنية للحوادث.</p>
-        </article>
-        <article class="card">
-          <span class="tag">DFIR</span>
-          <h3>استجابة لحادث فدية</h3>
-          <p>احتواء خلال 4 ساعات، استعادة الخدمات، وتتبّع نقطة الدخول عبر تحليلات سجلات ذكية.</p>
-        </article>
-      </div>
+    <section id="awareness">
+      <h2>🛡️ التوعية والتثقيف السيبراني</h2>
+      <ul>
+        <li>احذر من اختراق حسابات انستقرام + كيفية استرجاعها</li>
+        <li>احذر من اختراق حسابات سناب شات</li>
+        <li>كيف يتم استدراج الأطفال عبر الألعاب؟</li>
+      </ul>
     </section>
 
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <h2 style="margin:0 0 16px; font-size:28px">تواصل</h2>
-      <div class="card" style="display:grid; gap:16px">
-        <p style="margin:0; color:var(--muted)">جاهز للتعاون في مشاريع اختبار الاختراق، الاستجابة للحوادث، وبناء برامج أمنية فعّالة.</p>
-        <div class="social">
-          <a href="#" aria-label="GitHub">🔗 GitHub</a>
-          <a href="#" aria-label="LinkedIn">🔗 LinkedIn</a>
-          <a href="#" aria-label="YouTube">🔗 YouTube</a>
-          <a href="#" aria-label="Telegram">🔗 Telegram</a>
-          <a href="mailto:email@example.com" aria-label="Email">✉️ البريد الإلكتروني</a>
-        </div>
-      </div>
+    <section id="web">
+      <h2>🛡️ اختبار فحص المواقع وتطبيقات الويب</h2>
+      <ul>
+        <li>منهج الهكر الأخلاقي العربي - المقدمة</li>
+        <li>اختبار XSS و SQL Injection</li>
+        <li>تطبيق عملي على فحص الثغرات</li>
+      </ul>
     </section>
-  </main>
 
-  <footer>
-    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
-      <div>© <span id="year"></span> بروفايل هاكر محترف. جميع الحقوق محفوظة.</div>
-      <div style="opacity:.8">مبني بحب على HTML + CSS فقط.</div>
-    </div>
-  </footer>
+    <section id="wifi">
+      <h2>🛡️ اختبار فحص شبكات الواي فاي</h2>
+      <ul>
+        <li>كشف الشبكات المجاورة</li>
+        <li>كسر باسوردات الشبكات</li>
+        <li>إنشاء شبكة وهمية</li>
+      </ul>
+    </section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <section id="server">
+      <h2>🛡️ اختبار فحص السيرفرات</h2>
+      <ul>
+        <li>تطبيق عملي (الجزء الأول - الثامن)</li>
+      </ul>
+    </section>
+
+    <section id="kali">
+      <h2>🛡️ شرح كتاب اتقان كالي لينكس</h2>
+      <ul>
+        <li>إعداد نظام كالي لينكس</li>
+        <li>شرح أدوات OSRFramework, theHarvester, recon-ng</li>
+        <li>Google Hacking + Maltego</li>
+      </ul>
+    </section>
+
+    <section id="network">
+      <h2>🛡️ أمن الشبكات</h2>
+      <ul>
+        <li>شرح OSI Layers وما يقابلها من التهديدات الأمنية</li>
+      </ul>
+    </section>
+
+    <section id="ctf">
+      <h2>🛡️ تحديات وحلول CTF</h2>
+      <ul>
+        <li>CTF Forensics WriteUp - Selfie</li>
+        <li>CTF Forensics WriteUp - Street View</li>
+      </ul>
+    </section>
+
+    <section id="tools">
+      <h2>🛡️ شرح الأدوات والبرامج</h2>
+      <ul>
+        <li>Burp Suite و ZAP</li>
+        <li>أداة CUPP و Crunch</li>
+        <li>أداة Sublister</li>
+      </ul>
+    </section>
+
+    <section id="reports">
+      <h2>🛡️ تقارير تحليلية وتغطيات</h2>
+      <ul>
+        <li>تغطية دورات SANS في لندن</li>
+        <li>مستر روبوت - قصة إليوت</li>
+      </ul>
+    </section>
+
+  </div>
 </body>
 </html>
