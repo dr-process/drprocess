@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dr-process.github.io/sitemap.xml
